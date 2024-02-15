@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Up5VxN8kVXoX7WvPMwLhAF/1CGtXXyN7u012KxI5YCLNoq8CO1BC6rhYg0xXB9c20YcDVXwG+uBacTbkyv1SoA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\NTS-Shilpa Kale\\source\\repos\\RepositoryDesignPatternExample\\CleanArchitectureCQRS_Mediator\\CleanArchitectureCQRS_Mediator.Domain\\CleanArchitectureCQRS_Mediator.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\NTS-Shilpa Kale\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\NTS-Shilpa Kale\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\NTS-Shilpa Kale\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

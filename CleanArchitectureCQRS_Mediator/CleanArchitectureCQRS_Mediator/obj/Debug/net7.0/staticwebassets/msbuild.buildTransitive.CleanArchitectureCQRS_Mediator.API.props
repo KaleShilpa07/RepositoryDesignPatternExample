@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\CleanArchitectureCQRS_Mediator.API.props" />
+</Project>

@@ -1,0 +1,78 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Transaction</h1>
+
+        <form id="depositForm" class="mb-4">
+            <div class="form-group">
+                <label for="depositAmount">Deposit Amount:</label>
+                <input type="number" class="form-control" id="depositAmount" name="depositAmount" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Deposit</button>
+        </form>
+
+        <form id="withdrawForm">
+            <div class="form-group">
+                <label for="withdrawAmount">Withdraw Amount:</label>
+                <input type="number" class="form-control" id="withdrawAmount" name="withdrawAmount" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Withdraw</button>
+        </form>
+
+        <div id="balance" class="mt-4"></div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#depositForm').submit(function (event) {
+                event.preventDefault();
+                var amount = $('#depositAmount').val();
+                $.ajax({
+                    url: '/Transaction/Deposit', // Corrected URL
+                    method: 'POST',
+                    data: { amount: amount },
+                    success: function (response) {
+                        $('#balance').text('Balance: ' + response.balance);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+
+            $('#withdrawForm').submit(function (event) {
+                event.preventDefault();
+                var amount = $('#withdrawAmount').val();
+                $.ajax({
+                    url: '/Transaction/Withdraw', // Corrected URL
+                    method: 'POST',
+                    data: { amount: amount },
+                    success: function (response) {
+                        $('#balance').text('Balance: ' + response.balance);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
+
